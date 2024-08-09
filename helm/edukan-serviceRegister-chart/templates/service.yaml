@@ -1,15 +1,12 @@
-# Service for the application
 apiVersion: v1
 kind: Service
 metadata:
-  name: edukan-eureka
-  labels:
-    app: edukan-eureka
+  name: eureka-service
 spec:
-  ports:
-  - port:
-    targetPort: 3000
-    protocol: TCP
   selector:
-    app: edukan-eureka
+    app: eureka-service
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8761
   type: ClusterIP

@@ -1,19 +1,19 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: edukan-eureka
+  name: eureka-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: nginx
   rules:
-  - host: adena.local
-    http:
-      paths: 
-      - path: /eurekaserviceregister
-        pathType: Prefix
-        backend:
-          service:
-            name: edukan-eureka
-            port:
-              number: 8761
+    - host: eureka.adena.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: eureka-service
+                port:
+                  number: 80
