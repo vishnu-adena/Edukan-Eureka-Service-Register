@@ -70,7 +70,7 @@ jobs:
 
       - name: Update tag in Helm chart
         run: |
-          sed -i 's/tag: .*/tag: "${{ github.run_id }}"/' helm/edukan-service-register/values.yaml
+          sed -i 's/tag: .*/tag: "${{ github.run_id }}"/' helm/edukan-serviceRegister-chart/values.yaml
 
       - name: Commit and push changes
         run: |
