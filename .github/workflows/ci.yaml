@@ -67,6 +67,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Update tag in Helm chart
         run: |
@@ -80,3 +82,5 @@ jobs:
           git commit -m "Update tag in Helm chart"
           git pull --rebase origin main  # Pull the latest changes
           git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
