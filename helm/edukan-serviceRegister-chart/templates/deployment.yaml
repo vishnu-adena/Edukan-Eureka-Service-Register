@@ -1,0 +1,29 @@
+# This is a sample deployment manifest file for a simple web application.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: edukan-eureka
+  labels:
+    app: edukan-eureka
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: edukan-eureka
+  template:
+    metadata:
+      labels:
+        app: edukan-eureka
+    spec:
+      containers:
+      - name: edukan-eureka
+        image: vishnu11759/edukan-service-register:{{ .Values.image.tag }}
+        ports:
+        - containerPort: 8761
+        resources:
+          requests:
+            cpu: {{ .Values.resources.requests.cpu }}
+            memory: {{ .Values.resources.requests.memory }}
+          limits:
+            cpu: {{ .Values.resources.limits.cpu }}
+            memory: {{ .Values.resources.limits.memory }}
