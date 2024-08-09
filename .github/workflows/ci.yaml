@@ -76,7 +76,7 @@ jobs:
         run: |
           git config --global user.email "adenavishnu1@gmail.com"
           git config --global user.name "Vishnu Vardhan"
-          git add helm/edukan-service-register/values.yaml
+          git add helm/edukan-serviceRegister-chart/values.yaml
           git commit -m "Update tag in Helm chart"
           git pull --rebase origin main  # Pull the latest changes
           git push
