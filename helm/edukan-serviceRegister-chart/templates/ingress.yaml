@@ -7,13 +7,13 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: eureka.adena.local
+    - host: adena.local
       http:
         paths:
-          - path: /
+          - path: /eureka
             pathType: Prefix
             backend:
               service:
                 name: eureka-service
                 port:
-                  number: 80
+                  number: 8761

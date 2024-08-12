@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: eureka-service
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: eureka-service
@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: eureka-container
-          image: vishnu11759/eureka-service:latest
+          image: vishnu11759/edukan-service-register:latest
           ports:
             - containerPort: 8761
