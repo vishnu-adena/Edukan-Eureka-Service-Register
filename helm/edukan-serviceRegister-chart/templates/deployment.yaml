@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: eureka-container
-          image: vishnu11759/edukan-service-register:latest
+          image: vishnu11759/edukan-service-register:{{ .Values.image.tag }}
           ports:
             - containerPort: 8761
